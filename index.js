@@ -6,6 +6,7 @@ const routes = require('./src/routes');
 const { Server } = require('socket.io'); // Import Socket.IO
 const http = require('http'); // Import HTTP module
 require('dotenv').config();
+
 const corsOptions = {
     origin: process.env.DOMAIN_NAME || 'http://localhost:3000', // Chỉ định nguồn cụ thể
     credentials: true, // Cho phép gửi cookie và thông tin xác thực
