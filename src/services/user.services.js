@@ -312,7 +312,7 @@ const changeAvatar = async (req) => {
                         id: req.user_id,
                     },
                     data: {
-                        url_avatar: corsAnywhereUrl + fullpathConverted,
+                        url_avatar: fullpathConverted,
                     },
                 });
                 if (changeAvatarUser) {
