@@ -23,6 +23,9 @@ const io = new Server(server, {
 app.use((req, res, next) => {
     res.setHeader('X-Requested-With', 'XMLHttpRequest');
     req.io = io; // Thêm io vào request object
+    if (!req.headers['x-requested-with']) {
+        return res.status(400).send('Missing required header: x-requested-with');
+    }
     next();
 });
 app.use(cors(corsOptions));
@@ -35,6 +38,8 @@ app.use('/api/category', routes.categoryRouter);
 app.use('/api/blog', routes.blogRouter);
 io.on('connection', (socket) => {
     console.log(`User connected: ${socket.id}`);
+    const requestedWith = socket.handshake.headers['x-requested-with'];
+    console.log('X-Requested-With:', requestedWith); // Log the header value
 
     // Lắng nghe sự kiện xác thực
     socket.on('authenticate', (userId) => {

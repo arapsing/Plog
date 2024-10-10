@@ -1447,6 +1447,7 @@ const top10Like = async (req) => {
                     user_id: item.user.id,
                     first_name: item.user.first_name,
                     last_name: item.user.last_name,
+                    url_avatar: item.url_image,
                 },
                 categories: item.blog_categories.map((cc) => {
                     return {
@@ -1514,6 +1515,7 @@ const top10View = async (req) => {
                     user_id: item.user.id,
                     first_name: item.user.first_name,
                     last_name: item.user.last_name,
+                    url_avatar: item.url_image,
                 },
                 categories: item.blog_categories.map((cc) => {
                     return {
