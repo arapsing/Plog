@@ -7,8 +7,6 @@ const { setSignupEmail, setResetEmail } = require('../configs/nodemailer.configs
 const { sendMail } = require('../common/mail');
 const helper = require('../helper');
 const { PrismaClientKnownRequestError } = require('@prisma/client');
-const corsAnywhereUrl = 'https://cors-pass.onrender.com/'; // Use your own CORS Anywhere instance if possible
-
 async function registerUser(req) {
     try {
         const { first_name, last_name, email, password, confirm_password } = req.body;
