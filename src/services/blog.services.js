@@ -905,9 +905,9 @@ async function deleteReactionCommentBlog(reaction_id) {
                 type: deleteReactionCommentBlog.type,
                 user: {
                     user_id: deleteReactionCommentBlog.user.id,
-                    first_name: deleteReactionCommentBlog.user.first_name,
-                    last_name: deleteReactionCommentBlog.user.last_name,
-                    url_avatar: deleteReactionCommentBlog.user.url_avatar,
+                    user_first_name: deleteReactionCommentBlog.user.first_name,
+                    user_last_name: deleteReactionCommentBlog.user.last_name,
+                    user_url_avatar: deleteReactionCommentBlog.user.url_avatar,
                 },
             });
         else return new ResponseError(400, 'Có lỗi trong quá trình xử lí dữ liệu', false);
@@ -936,9 +936,9 @@ async function createReactionCommentBlog(user_id, comment_id, type) {
                 type: createReactionCommentBlog.type,
                 user: {
                     user_id: createReactionCommentBlog.user.id,
-                    first_name: createReactionCommentBlog.user.first_name,
-                    last_name: createReactionCommentBlog.user.last_name,
-                    url_avatar: createReactionCommentBlog.user.url_avatar,
+                    user_first_name: createReactionCommentBlog.user.first_name,
+                    user_last_name: createReactionCommentBlog.user.last_name,
+                    user_url_avatar: createReactionCommentBlog.user.url_avatar,
                 },
             });
         else return new ResponseError(400, 'Có lỗi xảy ra trong quá trình xử lí dữ liệu', false);

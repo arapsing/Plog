@@ -473,7 +473,9 @@ async function refreshAccessToken(req) {
     try {
         const refreshTokenRaw = req.headers.rftoken;
         const refreshToken = refreshTokenRaw.split(' ')[1];
-        if (!refreshToken) return new ResponseError(400, 'Yêu cầu không hợp lệ', false);
+        if (!refreshToken) {
+            return new ResponseError(400, 'Yêu cầu không hợp lệ', false);
+        }
         const isVerifyRefreshToken = jwt.verify(refreshToken, configs.general.JWT_SECRET_KEY);
         if (isVerifyRefreshToken) {
             const newAccessToken = jwt.sign(
